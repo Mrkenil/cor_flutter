@@ -1,0 +1,43 @@
+List<Map<String, dynamic>> qust = [
+  {
+    'id': 1,
+    'qus': "The International Literacy Day is observed on",
+    'A': "Sep 8",
+    'B': "Nov 28",
+    'C': "May 2",
+    'D': "Sep 22",
+    'ans': "A",
+    'amout': 2000,
+  },
+  {
+    'id': 2,
+    'qus': "Which day is observed as the World Standards  Day?",
+    'A': "June 26",
+    'B': "Oct 14",
+    'C': "Nov 15",
+    'D': "Dec 2",
+    'ans': "B",
+    'amout': 4000,
+  },
+  {
+    'id': 3,
+    'qus': "Who is the author of 'Manas Ka-Hans' ?",
+    'A': "Khushwant Singh",
+    'B': "Prem Chand",
+    'C': "Jayashankar Prasad",
+    'D': "Amrit Lal Nagar",
+    'ans': "D",
+    'amout': 6000,
+  },
+  {
+    'id': 4,
+    'qus': "Good Friday is observed to commemorate the event of",
+    'A': "birth of Jesus Christ",
+    'B': "birth of' St. Peter",
+    'C': "crucification 'of Jesus Christ",
+    'D': "rebirth of Jesus Christ",
+    'ans': "C",
+    'amout': 10000,
+  },
+];
+String? person;
