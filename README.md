@@ -1,5 +1,10 @@
 # kbc_game
 
+![image](https://user-images.githubusercontent.com/114163927/231788125-7035ca8f-961f-434a-8724-88e2c3d74716.png)
+![Screenshot 2023-04-13 181722](https://user-images.githubusercontent.com/114163927/231788687-09d55e3c-f884-43f7-9045-4eb4059c8b18.png)
+
+
+
 A new Flutter project.
 
 ## Getting Started
