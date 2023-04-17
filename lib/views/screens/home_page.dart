@@ -38,13 +38,152 @@ class _home_pageState extends State<home_page> {
           IconButton(
             onPressed: () async {
               final pw.Document pdf = pw.Document();
-
+              var img = pw.MemoryImage(
+                Global.image!.readAsBytesSync(),
+              );
               pdf.addPage(
                 pw.Page(
                   pageFormat: PdfPageFormat.a4,
                   build: (pw.Context context) {
-                    return pw.Center(
-                      child: pw.Text("Hello World"),
+                    return pw.Padding(
+                      padding: pw.EdgeInsets.all(2),
+                      child: pw.Column(
+                        mainAxisAlignment: pw.MainAxisAlignment.start,
+                        children: [
+                          pw.Row(
+                            children: [
+                              pw.Container(
+                                height: 150,
+                                width: 150,
+                                decoration: pw.BoxDecoration(
+                                  border: pw.Border.all(
+                                    width: 2,
+                                  ),
+                                ),
+                                child: pw.Image(img),
+                              ),
+                              pw.SizedBox(
+                                width: 10,
+                              ),
+                              pw.Column(
+                                mainAxisAlignment: pw.MainAxisAlignment.start,
+                                children: [
+                                  pw.Text(
+                                    "${Global.name}",
+                                    style: pw.TextStyle(
+                                      fontSize: 30,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    "${Global.email}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    "${Global.phone}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          pw.Divider(),
+                          pw.Text(
+                            "Carrier Objective :",
+                            style: pw.TextStyle(
+                              fontSize: 26,
+                            ),
+                          ),
+                          pw.Text(
+                            "   ${Global.career_Objective}",
+                            style: pw.TextStyle(
+                              fontSize: 22,
+                            ),
+                          ),
+                          pw.Text(
+                            "Current Designation : ${Global.current_Designation}",
+                            style: pw.TextStyle(
+                              fontSize: 24,
+                            ),
+                          ),
+                          pw.Divider(),
+                          pw.SizedBox(
+                            height: 10,
+                          ),
+                          pw.Row(
+                            children: [
+                              pw.Column(
+                                mainAxisAlignment: pw.MainAxisAlignment.start,
+                                children: [
+                                  pw.Text(
+                                    "DOB :",
+                                    style: pw.TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    "   ${Global.DD}-${Global.MM}-${Global.YYYY}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    "Marital Status :",
+                                    style: pw.TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    "   ${Global.Marital_Status}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    "Languages Known :",
+                                    style: pw.TextStyle(
+                                      fontSize: 26,
+                                    ),
+                                  ),
+                                  pw.SizedBox(
+                                    height: 10,
+                                  ),
+                                  pw.Text(
+                                    " English : ${Global.LEnglish}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    " Gujarati : ${Global.LGujarati}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                  pw.Text(
+                                    "Hindi : ${Global.LHindi}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                  pw.SizedBox(
+                                    height: 10,
+                                  ),
+                                  pw.Text(
+                                    "  Country : ${Global.country}",
+                                    style: pw.TextStyle(
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ); // Center
                   },
                 ),
@@ -114,7 +253,7 @@ class _home_pageState extends State<home_page> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(24),
+              padding: EdgeInsets.all(18),
               child: Column(
                 children: [
                   Container(
@@ -123,9 +262,11 @@ class _home_pageState extends State<home_page> {
                   Container(
                     height: 100,
                     width: w,
-                    child: CircleAvatar(
-                      foregroundImage: FileImage(Global.image!),
-                    ),
+                    child: (Global.image == null)
+                        ? Container()
+                        : CircleAvatar(
+                            foregroundImage: FileImage(Global.image!),
+                          ),
                   ),
                   Container(
                     width: w,

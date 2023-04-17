@@ -180,8 +180,87 @@ class _experiences_pageState extends State<experiences_page> {
                         color: Colors.grey,
                       ),
                       (Global.Employed_Status)
-                          ? Row(
+                          ? Column(
                               children: [
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: w * 0.05,
+                                    ),
+                                    Column(
+                                      children: [
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        Text(
+                                          "Joined Date",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          height: 40,
+                                          width: 100,
+                                          child: TextField(
+                                            decoration: InputDecoration(
+                                              border: OutlineInputBorder(),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: w * 0.2,
+                                    ),
+                                    Column(
+                                      children: [
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        Text(
+                                          "End Date",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          height: 40,
+                                          width: 100,
+                                          child: TextField(
+                                            decoration: InputDecoration(
+                                              border: OutlineInputBorder(),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text("Save"),
+                                  ),
+                                )
+                              ],
+                            )
+                          : Row(
+                              children: [
+                                SizedBox(
+                                  width: w * 0.05,
+                                ),
                                 Column(
                                   children: [
                                     const SizedBox(
@@ -194,22 +273,22 @@ class _experiences_pageState extends State<experiences_page> {
                                         fontSize: 16,
                                       ),
                                     ),
-                                    Row(),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Container(
+                                      height: 40,
+                                      width: 100,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          border: OutlineInputBorder(),
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],
-                            )
-                          : Column(),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text("Save"),
-                        ),
-                      )
+                            ),
                     ],
                   ),
                 ),
